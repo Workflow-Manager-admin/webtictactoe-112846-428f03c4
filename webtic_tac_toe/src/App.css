@@ -9,8 +9,15 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  /* Vaporwave retro gradient overlaid with pixel grid */
   background-color: var(--base-dark);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(44,255,252,0.135) 0, rgba(0,0,0,0.08) 1px, transparent 2px, transparent 48px),
+    repeating-linear-gradient(0deg, rgba(44,255,252,0.135) 0, rgba(0,0,0,0.08) 1px, transparent 2px, transparent 48px),
+    linear-gradient(120deg, #392367 0%, #627acc 33%, #ff119a 70%, #00ffd0 95%);
   color: var(--text-color);
+  background-size: 48px 48px, 48px 48px, cover;
+  background-blend-mode: lighten, lighten, normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -19,6 +26,16 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  /* Retro glassy card with glowing border */
+  background: rgba(28, 31, 80, 0.74);
+  border-radius: 18px;
+  box-shadow: 0 0 24px 0 #00ffd066, 0 0 120px 8px #ff119a55;
+  border: 2.4px solid rgba(44,255,252,0.24);
+  backdrop-filter: blur(1.7px);
+  margin: 0 auto;
+  /* Each page is centered with padding from outer bg */
+  width: 100%;
+  max-width: 100vw;
 }
 
 .navbar {
@@ -53,6 +70,10 @@ body {
   padding: 0 24px;
   width: 100%;
   box-sizing: border-box;
+  background: transparent;  /* let retro bg shine through */
+  border-radius: 12px;
+  border: 1.2px solid rgba(44,255,252,0.13);
+  /* For elements that want to appear card-like inside, do not add backgrounds here */
 }
 
 .hero {
@@ -99,7 +120,9 @@ body {
 }
 
 .btn:hover {
-  background-color: #7691ff;
+  background-color: #00ffd0;
+  color: #3141a5;
+  filter: drop-shadow(0 0 4px #00ffd0cc);
 }
 
 .btn-large {
